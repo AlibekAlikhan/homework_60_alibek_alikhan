@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Detail{% endblock %}
+{% block navbar %}
+<div class="navbar">
+    <ul>
+        <li>
+            <a href="{% url 'index_article' %}">Return to home page</a>
+        </li>
+    </ul>
+{% endblock %}
+{% block content %}
+    <div class="container">
+    <form method="post">
+        {%csrf_token%}
+       <div class="row">
+            <label for="status_category">Title</label>
+            <input type="text" id="status_category" name="status_category">
+        </div>
+        <div class="row">
+            <label for="text_category">Text</label>
+            <input type="text" id="text_category" name="text_category">
+        </div>
+        <button type="submit">Создать</button>
+    </form>
+</div>
+
+{% endblock %}
