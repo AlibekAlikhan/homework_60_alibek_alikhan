@@ -8,6 +8,11 @@
 </head>
 <body>
 <div class="navbar">
+    <a href="{% url 'create_article' %}">Add tasks</a>
+    <a href="{% url 'create_category' %}">Add category</a>
+    <a href="{% url 'index_article' %}">Home</a>
+</div>
+<div class="navbar">
     {% block navbar %} {% endblock %}
 </div>
 <div class="container">

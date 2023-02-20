@@ -12,8 +12,8 @@ def product_view(request: WSGIRequest):
     return render(request, "tasks.html", context=context)
 
 
-def category_view(request: WSGIRequest):
-    category = Category.objects.all()
+def category_view(request: WSGIRequest, pk):
+    category = get_object_or_404(Category, pk=pk)
     context = {
         "category": category
     }
@@ -31,7 +31,7 @@ def product_create(request: WSGIRequest):
         "name": request.POST.get('name'),
         "text": request.POST.get('text'),
         "create_at": request.POST.get('create_at'),
-        "category": request.POST.get('category'),
+        "category": get_object_or_404(Category, pk=int(request.POST.get('category'))),
         "price": request.POST.get('price'),
         "image_url": request.POST.get('image_url')
     }
@@ -47,8 +47,8 @@ def category_create(request: WSGIRequest):
         "status_category": request.POST.get('status_category'),
         "text_category": request.POST.get('text_category'),
     }
-    Category.objects.create(**categoty_data)
-    return redirect("category_view")
+    category = Category.objects.create(**categoty_data)
+    return redirect("category_view", pk=category.pk)
 
 
 def detail_view(request: WSGIRequest, pk):

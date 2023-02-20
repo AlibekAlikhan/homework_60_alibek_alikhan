@@ -1,11 +1,10 @@
 {% extends "base.html" %}
 {% block title %}Detail{% endblock %}
-{% block navbar %}
-<div class="navbar">
-<h2><a href="{% url 'create_article' %}">Add tasks</a></h2>
-<h2><a href="{% url 'index_article' %}">Home</a></h2>
-</div>
-{% endblock %}
 {% block content %}
+    <h2><img src="" alt="{{article.image_url}}"></h2>
+    <h2>{{article.name}}</h2>
+    <h2><a href="{% url 'category_view' article.category.pk%}">{{article.category.status_category}}</a></h2>
+    <h2>{{article.price}}</h2>
     <h2>{{article.text}}</h2>
+    <h2>{{article.create_at}}</h2>
 {% endblock %}

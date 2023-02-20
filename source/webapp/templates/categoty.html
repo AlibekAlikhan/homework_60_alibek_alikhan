@@ -1,14 +1,6 @@
 {% extends "base.html" %}
 {% block title %}Home{% endblock %}
-{% block navbar %}
-    <div class="navbar">
-    <a href="{% url 'create_article' %}">Add tasks</a>
-    </div>
-{% endblock %}
 {% block content %}
-    {% for i in category %}
-    <h2>{{i.status_category}}</h2>
-    <h2>{{i.text_category}}</h2>
-    <hr>
-    {% endfor %}
+    <h2>{{category.status_category}}</h2>
+    <h2>{{category.text_category}}</h2>
 {% endblock %}
