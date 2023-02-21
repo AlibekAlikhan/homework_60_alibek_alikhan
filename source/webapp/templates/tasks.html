@@ -2,11 +2,16 @@
 {% block title %}Home{% endblock %}
 {% block content %}
 {% for article in articles %}
-<h2><img src="" alt="{{article.image_url}}"></h2>
-<h2>{{article.name}}</h2>
-<h2><a href="{% url 'category_view' article.category.pk%}">{{article.category.status_category}}</a></h2>
-<h2>{{article.price}}</h2>
-<h2><a href="{% url 'detail_view' article.pk%}">see more</a></h2>
-<hr>
+<div class="card">
+  <div class="card_two">
+<h2 ><img src="{{article.image_url}}" alt=""></h2>
+  <div class="ditael">
+  <h2>{{article.name}}</h2>
+  <h2><a href="{% url 'category_view' article.category.pk%}">{{article.category.status_category}}</a></h2>
+  <h2>{{article.price}}</h2>
+  <h2><a href="{% url 'detail_view' article.pk%}">see more</a></h2>
+    </div>
+    </div>
+</div>
 {% endfor %}
 {% endblock %}

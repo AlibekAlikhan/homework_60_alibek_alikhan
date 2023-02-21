@@ -2,18 +2,22 @@
 {% block title %}Detail{% endblock %}
 {% block content %}
     <div class="container">
-    <form method="post">
-        {%csrf_token%}
-       <div class="row">
-            <label for="status_category">Title</label>
-            <input type="text" id="status_category" name="status_category">
+        <div class="card_input">
+        <div class="deatail_color">
+            <form method="post">
+                {%csrf_token%}
+               <div class="row">
+                    <label for="status_category">Title</label>
+                    <h1><input type="text" id="status_category" name="status_category"></h1>
+                </div>
+                <div class="row">
+                    <label for="text_category">Text</label>
+                    <h1><input type="text" id="text_category" name="text_category"></h1>
+                </div>
+                <button type="submit">Создать</button>
+            </form>
         </div>
-        <div class="row">
-            <label for="text_category">Text</label>
-            <input type="text" id="text_category" name="text_category">
-        </div>
-        <button type="submit">Создать</button>
-    </form>
+            </div>
 </div>
 
 {% endblock %}

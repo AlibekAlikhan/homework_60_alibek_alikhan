@@ -1,10 +1,18 @@
 {% extends "base.html" %}
 {% block title %}Detail{% endblock %}
 {% block content %}
-    <h2><img src="" alt="{{article.image_url}}"></h2>
-    <h2>{{article.name}}</h2>
-    <h2><a href="{% url 'category_view' article.category.pk%}">{{article.category.status_category}}</a></h2>
-    <h2>{{article.price}}</h2>
-    <h2>{{article.text}}</h2>
-    <h2>{{article.create_at}}</h2>
+<div class="deatail_color">
+    <div class="card">
+        <div class="card_detail">
+            <h2><img src="{{article.image_url}}" alt=""></h2>
+            <div class="ditael">
+                <h2>{{article.name}}</h2>
+                <h2><a href="{% url 'category_view' article.category.pk%}">{{article.category.status_category}}</a></h2>
+                <h2>{{article.price}}</h2>
+                <h2>{{article.text}}</h2>
+                <h2>{{article.create_at}}</h2>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

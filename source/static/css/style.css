@@ -1,10 +1,62 @@
-
+body{
+    background-image: url("https://assets.turbologo.ru/blog/ru/2021/10/30071021/background4.png");
+}
 .navbar{
     font-size: 2rem;
-  text-align: center;
-  background-color: green;
+    text-align: center;
+    background-color: #4d0000;
+    display: flex;
 }
 .navbar a{
     text-decoration: none;
-    color : white
+    color : white;
+}
+.navbar_link{
+    padding-left: 90px;
+}
+.header_link{
+    margin-left: 300px;
+    padding: 70px
+}
+.my_market{
+    padding: 20px;
+    color : white;
+}
+.card{
+    width: 600px;
+    height: 300px;
+    display: flex;
+    margin-top: 50px;
+}
+.card_two{
+ background-color: #4d0000;
+    width: 600px;
+    height: 300px;
+    display: flex;
+    margin-top: 50px;
+    border: 10px solid black;
+    color: white;
+}
+.ditael{
+    padding-left: 140px;
+}
+.deatail_color{
+    color : white;
+    margin: 50px
+}
+.card_input{
+ background-color: #4d0000;
+    width: 600px;
+    height: 600px;
+    display: flex;
+    margin-top: 50px;
+    border: 10px solid black;
+}
+.card_detail{
+ background-color: #4d0000;
+    width: 800px;
+    height: 360px;
+    display: flex;
+    margin-top: 50px;
+    border: 10px solid black;
 }

@@ -24,7 +24,7 @@ class Article(models.Model):
     text = models.TextField(max_length=3000, null=True, verbose_name="Текст")
     price = models.DecimalField(max_digits=15, decimal_places=0, default=0, verbose_name="Цена")
     image_url = models.TextField(max_length=3000, null=True, verbose_name="Фото")
-    create_at = models.DateField(verbose_name="Дата добавления")
+    create_at = models.DateField(auto_now_add=True, verbose_name="Дата добавления")
 
     def str(self):
         return f"{self.name} - {self.price}"
