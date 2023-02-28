@@ -10,6 +10,8 @@
     <h2>{{article.category}}</h2>
   <h2>{{article.price}}</h2>
   <h2><a href="{% url 'detail_view' article.pk%}">see more</a></h2>
+    <h2><a class="navbar_link" href="{% url 'product_update' article.pk%}">Update</a> <a class="navbar_link"
+                                                                                                     href="{% url 'article_delit' article.pk%}">Delete</a>
     </div>
     </div>
 </div>
