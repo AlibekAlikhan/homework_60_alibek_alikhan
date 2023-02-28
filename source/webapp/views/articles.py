@@ -7,7 +7,7 @@ from webapp.forms import ArticleForm
 
 
 def product_view(request: WSGIRequest):
-    articles = Article.objects.all()
+    articles = Article.objects.all().order_by("-category")
     context = {
         "articles": articles
     }
