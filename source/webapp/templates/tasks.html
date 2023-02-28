@@ -7,7 +7,7 @@
 <h2 ><img src="{{article.image_url}}" alt="" style="width: 250px; height: 250;"></h2>
   <div class="ditael">
   <h2>{{article.name}}</h2>
-  <h2><a href="{% url 'category_view' article.category.pk%}">{{article.category.status_category}}</a></h2>
+    <h2>{{article.category}}</h2>
   <h2>{{article.price}}</h2>
   <h2><a href="{% url 'detail_view' article.pk%}">see more</a></h2>
     </div>

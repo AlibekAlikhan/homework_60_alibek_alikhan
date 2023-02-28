@@ -6,8 +6,10 @@
         <div class="card_detail">
             <h2><img src="{{article.image_url}}" alt="" style="width: 250px; height: 250;"></h2>
             <div class="ditael">
+                <h2><a class="navbar_link" href="{% url 'product_update' article.pk%}">Update</a> <a class="navbar_link"
+                                                                                                     href="{% url 'article_delit' article.pk%}">Delete</a>
+                </h2>
                 <h2>{{article.name}}</h2>
-                <h2><a href="{% url 'category_view' article.category.pk%}">{{article.category.status_category}}</a></h2>
                 <h2>{{article.price}}</h2>
                 <h2>{{article.text}}</h2>
                 <h2>{{article.create_at}}</h2>
