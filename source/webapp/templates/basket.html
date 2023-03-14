@@ -8,7 +8,7 @@
             <div class="card-body">
                 <h5 class="card-title">Количество - {{ bas.quantity }}</h5>
                 <h5 class="card-title">Название - {{ bas.product.name }}</h5>
-                <p class="card-text">Цена - {{ bas.product.price }}</p>
+                <p class="card-text">Цена - {{ bas.sum }}</p>
                 <form method="post" action="{% url 'baskets_delete' bas.pk %}">
                     {% csrf_token %}
                     <input type="submit" value="Удаление">
