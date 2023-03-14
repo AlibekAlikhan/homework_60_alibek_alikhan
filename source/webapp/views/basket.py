@@ -1,4 +1,4 @@
-from django.db.models import Count
+from django.db.models import Count, Sum
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse_lazy
 from django.views import View
@@ -38,6 +38,9 @@ class BasketView(TemplateView):
         basket = Basket.objects.exclude(quantity=0)
         for i in basket:
             i.sum = i.quantity * i.product.price
+        context['basket_sum'] = 0
+        for i in basket:
+            context['basket_sum'] += i.sum
         context['basket'] = basket
         context['form'] = OderForm()
         return context

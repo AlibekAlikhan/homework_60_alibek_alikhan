@@ -16,6 +16,7 @@
             </div>
         </div>
     {% endfor %}
+    <p class="card-text">Цена - {{ basket_sum}}</p>
     <form method="post">
         {% include 'partial/order_form.html' %}
     </form>
