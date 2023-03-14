@@ -1,6 +1,9 @@
 from django import forms
 from django.core.exceptions import ValidationError
-from webapp.models import Article
+
+from webapp.models.article import Article
+
+from webapp.models import Order
 
 
 class ArticleForm(forms.ModelForm):
@@ -24,6 +27,21 @@ class ArticleForm(forms.ModelForm):
 
     def clean_remainder(self):
         remainder = self.cleaned_data.get("remainder")
-        if remainder <= 0:
+        if remainder < 0:
             raise ValidationError("Остаток меньше 0 не должно быть")
         return remainder
+
+
+class SearchForm(forms.Form):
+    search = forms.CharField(max_length=20, required=False, label='Найти')
+
+
+class OderForm(forms.ModelForm):
+    class Meta:
+        model = Order
+        fields = ("name", "email", "phone")
+        labels = {
+            'name': 'Имя',
+            'email': 'Email',
+            'phone': 'Телефон'
+        }

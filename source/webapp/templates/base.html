@@ -1,4 +1,8 @@
 {% load static %}
+{% load django_bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,8 +17,8 @@
     <h2><a class="navbar_link" href="{% url 'index_article' %}">My market</a></h2>
     </div>
     <div class="header_link">
-    <a class="navbar_link" href="{% url 'create_article' %}">Add tasks</a>
-    <a class="navbar_link" href="{% url 'index_article' %}">Home</a>
+        <h2><a class="navbar_link" href="{% url 'baskets_view' %}">Basket</a></h2>
+    <a class="navbar_link" href="{% url 'create_article' %}">Add products</a>
     </div>
 </div>
 <div class="navbar">

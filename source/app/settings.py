@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_bootstrap5',
     'webapp',
 ]
 
@@ -74,7 +75,7 @@ WSGI_APPLICATION = 'app.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'products_base_two',
+        'NAME': 'homework_60_alibek_alikhan',
         'USER': 'postgres',
         'PASSWORD': 'alikhan2005',
         'HOST': 'localhost',

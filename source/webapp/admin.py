@@ -1,6 +1,10 @@
 from django.contrib import admin
 
-from webapp.models import Article
+from webapp.models.article import Article
+
+from webapp.models import Order
+
+from webapp.models import Products
 
 
 # Register your models here.
@@ -12,4 +16,17 @@ class ArticleAdmin(admin.ModelAdmin):
     readonly_fields = ("id", "create_at")
 
 
+class OrderAdmin(admin.ModelAdmin):
+    search_fields = ["name"]
+    filter = ["name"]
+    readonly_fields = ["id"]
+
+class ProductsAdmin(admin.ModelAdmin):
+    search_fields = ["count"]
+    filter = ["count"]
+    readonly_fields = ["id"]
+
+
 admin.site.register(Article, ArticleAdmin)
+admin.site.register(Order, OrderAdmin)
+admin.site.register(Products, ProductsAdmin)

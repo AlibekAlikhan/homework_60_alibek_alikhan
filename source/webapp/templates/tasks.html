@@ -1,19 +1,26 @@
 {% extends "base.html" %}
 {% block title %}Home{% endblock %}
 {% block content %}
-{% for article in articles %}
-<div class="card">
-  <div class="card_two">
-<h2 ><img src="{{article.image_url}}" alt="" style="width: 250px; height: 250;"></h2>
-  <div class="ditael">
-  <h2>{{article.name}}</h2>
-    <h2>{{article.category}}</h2>
-  <h2>{{article.price}}</h2>
-  <h2><a href="{% url 'detail_view' article.pk%}">see more</a></h2>
-    <h2><a class="navbar_link" href="{% url 'product_update' article.pk%}">Update</a> <a class="navbar_link"
-                                                                                                     href="{% url 'article_delit' article.pk%}">Delete</a>
-    </div>
-    </div>
-</div>
-{% endfor %}
+    {% include 'partial/search.html' %}
+    {% for article in articles %}
+        <div class="card" style="width: 400px; background-color: silver; margin: 20px">
+            <img src="{{ article.image_url }}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{ article.name }}</h5>
+                <h5 class="card-title">{{ article.category }}</h5>
+                <p class="card-text">{{ article.price }}</p>
+                <a href="{% url 'article_delit' article.pk %}" class="btn btn-primary">Delete</a>
+                <a href="{% url 'product_update' article.pk %}" class="btn btn-primary">Update</a>
+                <a href="{% url 'detail_view' article.pk %}" class="btn btn-primary" style="padding: 5px">see more</a>
+                <form method="post" action="{% url 'add_basket' article.pk %}">
+                    {% csrf_token %}
+                    <input type="submit" value="Добавление в корзину">
+                </form>
+            </div>
+        </div>
+
+    {% endfor %}
+    {% if is_paginated %}
+        {% include 'partial/pagination.html' %}
+    {% endif %}
 {% endblock %}

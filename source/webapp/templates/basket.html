@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Detail{% endblock %}
+{% block content %}
+
+    {% for bas in basket %}
+        {{ bas.name }}
+        <div class="card" style="width: 18rem; background-color: silver; margin: 20px">
+            <div class="card-body">
+                <h5 class="card-title">Количество - {{ bas.quantity }}</h5>
+                <h5 class="card-title">Название - {{ bas.product.name }}</h5>
+                <p class="card-text">Цена - {{ bas.product.price }}</p>
+                <form method="post" action="{% url 'baskets_delete' bas.pk %}">
+                    {% csrf_token %}
+                    <input type="submit" value="Удаление">
+                </form>
+            </div>
+        </div>
+    {% endfor %}
+    <form method="post">
+        {% include 'partial/order_form.html' %}
+    </form>
+{% endblock %}
